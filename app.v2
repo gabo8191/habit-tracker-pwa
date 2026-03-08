@@ -199,7 +199,7 @@ function renderExpensesList() {
                     <div class="expense-desc">${escapeHtml(exp.description)}</div>
                     <div class="expense-date-label">${formatDate(exp.date)}</div>
                 </div>
-                <span class="expense-amount">-$${formatMoney(exp.amount)}</span>
+                <span class="expense-amount">-$${exp.amount.toFixed(2)}</span>
                 <div class="expense-actions">
                     <button class="btn btn-danger" onclick="deleteExpense('${exp.id}')">x</button>
                 </div>
@@ -209,7 +209,7 @@ function renderExpensesList() {
 
   html =
     `<div style="text-align:right;margin-bottom:8px;font-weight:600;font-size:13px;color:#777;">
-        Total: <span style="color:#111;">-$${formatMoney(total)}</span> (${filtered.length} gastos)
+        Total: <span style="color:#111;">-$${total.toFixed(2)}</span> (${filtered.length} gastos)
     </div>` + html;
 
   container.innerHTML = html;
@@ -258,10 +258,10 @@ function initBudgetForm() {
     });
     const income = parseFloat(incomeInput.value) || 0;
     document.getElementById('budget-total-value').textContent =
-      '$' + formatMoney(total);
+      '$' + total.toFixed(2);
     const remaining = income - total;
     const remEl = document.getElementById('budget-remaining-value');
-    remEl.textContent = '$' + formatMoney(remaining);
+    remEl.textContent = '$' + remaining.toFixed(2);
     remEl.style.color = remaining < 0 ? '#999' : '#111';
   }
 
@@ -327,7 +327,7 @@ function renderBudgetsList() {
                     <button class="btn btn-danger" onclick="deleteBudget('${month}')">Eliminar</button>
                 </div>
                 <div class="budget-saved-detail">
-                    Ingreso: $${formatMoney(b.income)} | Presupuestado: $${formatMoney(totalBudget)}
+                    Ingreso: $${b.income.toFixed(2)} | Presupuestado: $${totalBudget.toFixed(2)}
                 </div>
             </div>
         `;
@@ -500,7 +500,7 @@ function renderPieChart(month) {
     legendHtml += `
             <div class="legend-item">
                 <span class="legend-color" style="background:${s.color}"></span>
-                ${getCategoryLabel(s.cat)}: $${formatMoney(s.val)} (${pct}%)
+                ${getCategoryLabel(s.cat)}: $${s.val.toFixed(2)} (${pct}%)
             </div>
         `;
   });
@@ -523,13 +523,13 @@ function updateSummary() {
   document.getElementById('summary-title').textContent =
     'Resumen - ' + formatMonth(month);
   document.getElementById('summary-income').textContent =
-    '$' + formatMoney(income);
+    '$' + income.toFixed(2);
   document.getElementById('summary-budgeted').textContent =
-    '$' + formatMoney(totalBudgeted);
+    '$' + totalBudgeted.toFixed(2);
   document.getElementById('summary-spent').textContent =
-    '$' + formatMoney(totalSpent);
+    '$' + totalSpent.toFixed(2);
   document.getElementById('summary-remaining').textContent =
-    '$' + formatMoney(remaining);
+    '$' + remaining.toFixed(2);
 
   const progressBar = document.getElementById('general-progress');
   const progressText = document.getElementById('general-progress-text');
@@ -539,7 +539,7 @@ function updateSummary() {
     progressBar.className = 'progress-bar';
     if (pct > 90) progressBar.classList.add('danger');
     else if (pct > 70) progressBar.classList.add('warning');
-    progressText.textContent = `${pct.toFixed(1)}% del presupuesto utilizado ($${formatMoney(totalSpent)} de $${formatMoney(totalBudgeted)})`;
+    progressText.textContent = `${pct.toFixed(1)}% del presupuesto utilizado ($${totalSpent.toFixed(2)} de $${totalBudgeted.toFixed(2)})`;
   } else {
     progressBar.style.width = '0%';
     progressBar.className = 'progress-bar';
@@ -585,8 +585,8 @@ function updateSummary() {
                         </div>
                     </div>
                     <div class="cat-detail-amounts">
-                        <div class="cat-detail-spent">$${formatMoney(spent)}</div>
-                        <div class="cat-detail-budget">${budgeted > 0 ? 'de $' + formatMoney(budgeted) : 'sin ppto.'}</div>
+                        <div class="cat-detail-spent">$${spent.toFixed(2)}</div>
+                        <div class="cat-detail-budget">${budgeted > 0 ? 'de $' + budgeted.toFixed(2) : 'sin ppto.'}</div>
                     </div>
                 </div>
             `;
@@ -614,17 +614,12 @@ function updateSummary() {
                         <div class="te-cat">${getCategoryLabel(exp.category)}</div>
                         <div class="te-desc">${escapeHtml(exp.description)} · ${formatDate(exp.date)}</div>
                     </div>
-                    <span class="top-expense-amount">$${formatMoney(exp.amount)}</span>
+                    <span class="top-expense-amount">$${exp.amount.toFixed(2)}</span>
                 </div>
             `;
     });
     topContainer.innerHTML = topHtml;
   }
-}
-
-// ===== Formato de moneda =====
-function formatMoney(amount) {
-  return amount.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 // ===== Toast / Notificaciones =====
