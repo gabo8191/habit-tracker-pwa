@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cashtrack-v4';
+const CACHE_NAME = 'cashtrack-v5';
 
 const APP_SHELL = [
   '/',
@@ -30,7 +30,7 @@ self.addEventListener('activate', (event) => {
         if (key !== CACHE_NAME) {
           return caches.delete(key);
         }
-      })
+      }),
     );
   });
 
@@ -54,6 +54,6 @@ self.addEventListener('fetch', (event) => {
           return cache.match('/offline.html');
         });
       });
-    })
+    }),
   );
 });

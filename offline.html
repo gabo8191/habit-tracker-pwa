@@ -1,109 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sin conexión - CashTrack</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=DM+Mono:wght@500&display=swap');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sin conexión - CashTrack</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=DM+Mono:wght@500&display=swap');
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: #efefef;
-      color: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 24px;
-      text-align: center;
-    }
+      body {
+        font-family: 'DM Sans', sans-serif;
+        background: #efefef;
+        color: #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 24px;
+        text-align: center;
+      }
 
-    .container { max-width: 300px; }
+      .container {
+        max-width: 300px;
+      }
 
-    .icon-wrap {
-      width: 80px;
-      height: 80px;
-      background: #fff;
-      border: 1.5px solid rgba(0,0,0,0.08);
-      border-radius: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
+      .icon-wrap {
+        width: 80px;
+        height: 80px;
+        background: #fff;
+        border: 1.5px solid rgba(0, 0, 0, 0.08);
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 28px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
 
-    .icon-wrap svg {
-      width: 36px;
-      height: 36px;
-      stroke: #a8cc1a;
-    }
+      .icon-wrap svg {
+        width: 36px;
+        height: 36px;
+        stroke: #a8cc1a;
+      }
 
-    .label {
-      font-size: 11px;
-      font-weight: 700;
-      color: #a8cc1a;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 10px;
-      font-family: 'DM Mono', monospace;
-    }
+      .label {
+        font-size: 11px;
+        font-weight: 700;
+        color: #a8cc1a;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 10px;
+        font-family: 'DM Mono', monospace;
+      }
 
-    h1 {
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-      line-height: 1.1;
-      color: #111;
-    }
+      h1 {
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin-bottom: 12px;
+        line-height: 1.1;
+        color: #111;
+      }
 
-    p {
-      font-size: 14px;
-      color: #888;
-      line-height: 1.6;
-      margin-bottom: 32px;
-    }
+      p {
+        font-size: 14px;
+        color: #888;
+        line-height: 1.6;
+        margin-bottom: 32px;
+      }
 
-    button {
-      background: #c8f135;
-      color: #0f0f0f;
-      border: none;
-      padding: 14px 32px;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      transition: background 0.2s, transform 0.1s;
-      width: 100%;
-      box-shadow: 0 4px 14px rgba(168,204,26,0.3);
-    }
+      button {
+        background: #c8f135;
+        color: #0f0f0f;
+        border: none;
+        padding: 14px 32px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: 'DM Sans', sans-serif;
+        transition:
+          background 0.2s,
+          transform 0.1s;
+        width: 100%;
+        box-shadow: 0 4px 14px rgba(168, 204, 26, 0.3);
+      }
 
-    button:hover { background: #a8cc1a; }
-    button:active { transform: scale(0.97); }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="1" y1="1" x2="23" y2="23"/>
-        <path d="M16.72 11.06A10.94 10.94 0 0119 12.55"/>
-        <path d="M5 12.55a10.94 10.94 0 015.17-2.39"/>
-        <path d="M10.71 5.05A16 16 0 0122.56 9"/>
-        <path d="M1.42 9a15.91 15.91 0 014.7-2.88"/>
-        <path d="M8.53 16.11a6 6 0 016.95 0"/>
-        <line x1="12" y1="20" x2="12.01" y2="20"/>
-      </svg>
+      button:hover {
+        background: #a8cc1a;
+      }
+      button:active {
+        transform: scale(0.97);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="icon-wrap">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="1" y1="1" x2="23" y2="23" />
+          <path d="M16.72 11.06A10.94 10.94 0 0119 12.55" />
+          <path d="M5 12.55a10.94 10.94 0 015.17-2.39" />
+          <path d="M10.71 5.05A16 16 0 0122.56 9" />
+          <path d="M1.42 9a15.91 15.91 0 014.7-2.88" />
+          <path d="M8.53 16.11a6 6 0 016.95 0" />
+          <line x1="12" y1="20" x2="12.01" y2="20" />
+        </svg>
+      </div>
+      <div class="label">Sin conexión</div>
+      <h1>No hay red disponible</h1>
+      <p>
+        CashTrack necesita conexión para cargar. Tus datos están guardados
+        localmente y estarán disponibles cuando vuelvas a conectarte.
+      </p>
+      <button onclick="window.location.reload()">Reintentar conexión</button>
     </div>
-    <div class="label">Sin conexión</div>
-    <h1>No hay red disponible</h1>
-    <p>CashTrack necesita conexión para cargar. Tus datos están guardados localmente y estarán disponibles cuando vuelvas a conectarte.</p>
-    <button onclick="window.location.reload()">Reintentar conexión</button>
-  </div>
-</body>
+  </body>
 </html>

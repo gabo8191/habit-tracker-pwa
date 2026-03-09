@@ -624,7 +624,10 @@ function updateSummary() {
 
 // ===== Formato de moneda =====
 function formatMoney(amount) {
-  return amount.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return amount.toLocaleString('es-CO', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 }
 
 // ===== Toast / Notificaciones =====
@@ -634,6 +637,16 @@ function showToast(message) {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 2500);
 }
+
+// ===== Exportar Gráficos a PDF =====
+document.getElementById('export-charts-pdf').addEventListener('click', () => {
+  const chartsSection = document.getElementById('charts');
+  chartsSection.classList.add('printing');
+  document.body.classList.add('print-mode');
+  window.print();
+  document.body.classList.remove('print-mode');
+  chartsSection.classList.remove('printing');
+});
 
 // ===== Detección de conexión =====
 window.addEventListener('offline', () => {
