@@ -1,0 +1,80 @@
+<section id="expenses" class="section active">
+  <div class="container-fluid px-3 px-sm-4">
+    <header class="section-header">
+      <h1>CashTrack</h1>
+      <p id="current-date"></p>
+    </header>
+
+    <form id="expense-form" class="card">
+      <h2>Nuevo Gasto</h2>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="expense-amount">Monto ($)</label>
+            <input
+              type="number"
+              id="expense-amount"
+              placeholder="0.00"
+              min="0.01"
+              step="0.01"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="expense-category">Categoria</label>
+            <select id="expense-category" required>
+              <option value="">Seleccionar categoria</option>
+              <option value="comida">Comida</option>
+              <option value="transporte">Transporte</option>
+              <option value="ocio">Ocio</option>
+              <option value="salud">Salud</option>
+              <option value="educacion">Educacion</option>
+              <option value="hogar">Hogar</option>
+              <option value="ropa">Ropa</option>
+              <option value="servicios">Servicios</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="expense-description">Descripcion</label>
+            <input
+              type="text"
+              id="expense-description"
+              placeholder="Descripcion del gasto"
+              maxlength="100"
+            />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="expense-date">Fecha</label>
+            <input type="date" id="expense-date" required />
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary w-100">
+            Registrar Gasto
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div class="card">
+      <div class="filter-row">
+        <label for="filter-month">Filtrar por mes:</label>
+        <input type="month" id="filter-month" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Gastos Registrados</h2>
+      <div id="expenses-list" class="expenses-list">
+        <p class="empty-state">No hay gastos registrados</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+<section id="summary" class="section">
+  <div class="container-fluid px-3 px-sm-4">
+    <header class="section-header">
+      <h1>Resumen Mensual</h1>
+    </header>
+
+    <div class="card">
+      <div class="filter-row">
+        <label for="summary-month">Mes:</label>
+        <input type="month" id="summary-month" />
+      </div>
+    </div>
+
+    <div class="card" id="summary-content">
+      <div class="summary-header">
+        <h2 id="summary-title">Resumen</h2>
+      </div>
+
+      <div class="row g-3 summary-grid">
+        <div class="col-6 col-md-3"><div class="summary-card income"><span class="summary-label">Ingreso</span><span class="summary-value" id="summary-income">$0.00</span></div></div>
+        <div class="col-6 col-md-3"><div class="summary-card budget-card"><span class="summary-label">Presupuestado</span><span class="summary-value" id="summary-budgeted">$0.00</span></div></div>
+        <div class="col-6 col-md-3"><div class="summary-card spent"><span class="summary-label">Gastado</span><span class="summary-value" id="summary-spent">$0.00</span></div></div>
+        <div class="col-6 col-md-3"><div class="summary-card remaining"><span class="summary-label">Disponible</span><span class="summary-value" id="summary-remaining">$0.00</span></div></div>
+      </div>
+
+      <div class="progress-section">
+        <h3>Progreso General</h3>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="general-progress"></div>
+        </div>
+        <p id="general-progress-text">0% del presupuesto utilizado</p>
+      </div>
+
+      <h3>Detalle por Categoria</h3>
+      <div id="summary-categories">
+        <p class="empty-state">Sin datos para este mes</p>
+      </div>
+
+      <h3>Top 5 Gastos del Mes</h3>
+      <div id="summary-top-expenses">
+        <p class="empty-state">Sin gastos registrados</p>
+      </div>
+    </div>
+  </div>
+</section>

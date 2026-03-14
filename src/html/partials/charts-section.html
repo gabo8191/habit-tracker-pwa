@@ -1,0 +1,52 @@
+<section id="charts" class="section">
+  <div class="container-fluid px-3 px-sm-4">
+    <header class="section-header">
+      <h1>Graficos</h1>
+    </header>
+
+    <div class="card">
+      <div class="filter-row">
+        <label for="chart-month">Mes a visualizar:</label>
+        <input type="month" id="chart-month" />
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="card">
+          <h2>Presupuesto vs Gasto Real</h2>
+          <div id="bar-chart" class="chart-container">
+            <p class="empty-state">Seleccione un mes con presupuesto configurado</p>
+          </div>
+          <div id="bar-chart-legend" class="chart-legend"></div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card">
+          <h2>Distribucion de Gastos</h2>
+          <div class="pie-chart-wrapper">
+            <canvas id="pie-chart" width="350" height="350"></canvas>
+          </div>
+          <div id="pie-chart-legend" class="chart-legend"></div>
+        </div>
+      </div>
+    </div>
+
+    <button id="export-charts-pdf" class="btn btn-export w-100 mt-3">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        width="18"
+        height="18"
+      >
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+      </svg>
+      Exportar a PDF
+    </button>
+  </div>
+</section>
