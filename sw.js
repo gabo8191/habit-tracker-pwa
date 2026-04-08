@@ -77,7 +77,7 @@ self.addEventListener('activate', (event) => {
 function trimDynamicCache(cacheName, maxItems) {
   caches.open(cacheName).then((cache) => {
     cache.keys().then((keys) => {
-      if (keys.length > maxItems) {P
+      if (keys.length > maxItems) {
         cache.delete(keys[0]).then(() => trimDynamicCache(cacheName, maxItems));
       }
     });
@@ -133,6 +133,10 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
   const requestUrl = new URL(event.request.url);
+
+  // Ignorar esquemas no HTTP/HTTPS (chrome-extension://, etc.)
+  if (requestUrl.protocol !== 'http:' && requestUrl.protocol !== 'https:')
+    return;
 
   // 1) Cache Only para recursos inmutables de CDN ya precacheados.
   if (IMMUTABLE_URLS.includes(requestUrl.href)) {
