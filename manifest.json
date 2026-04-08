@@ -2,9 +2,9 @@
   "name": "CashTrack - Control de Gastos",
   "short_name": "CashTrack",
   "description": "Controla tus gastos, establece presupuestos por categoría y visualiza tus finanzas con gráficos interactivos. Funciona sin conexión.",
-  "start_url": "/?source=pwa",
-  "scope": "/",
-  "id": "/",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "id": "./",
 
   "lang": "es",
   "dir": "ltr",
@@ -104,7 +104,7 @@
       "name": "Registrar Gasto",
       "short_name": "Gastos",
       "description": "Ir a la sección de registro de gastos",
-      "url": "/?section=expenses",
+      "url": "./?section=expenses",
       "icons": [
         {
           "src": "icons/icon-96x96.png",
@@ -117,7 +117,7 @@
       "name": "Presupuesto",
       "short_name": "Presupuesto",
       "description": "Configurar presupuestos mensuales",
-      "url": "/?section=budget",
+      "url": "./?section=budget",
       "icons": [
         {
           "src": "icons/icon-96x96.png",
@@ -130,7 +130,7 @@
       "name": "Gráficos",
       "short_name": "Gráficos",
       "description": "Ver gráficos de gastos y presupuesto",
-      "url": "/?section=charts",
+      "url": "./?section=charts",
       "icons": [
         {
           "src": "icons/icon-96x96.png",
@@ -143,7 +143,7 @@
       "name": "Resumen",
       "short_name": "Resumen",
       "description": "Ver resumen mensual de finanzas",
-      "url": "/?section=summary",
+      "url": "./?section=summary",
       "icons": [
         {
           "src": "icons/icon-96x96.png",
@@ -155,7 +155,7 @@
   ],
 
   "share_target": {
-    "action": "/?share-target",
+    "action": "./?share-target",
     "method": "GET",
     "enctype": "application/x-www-form-urlencoded",
     "params": {
