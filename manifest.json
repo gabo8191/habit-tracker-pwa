@@ -1,0 +1,166 @@
+{
+  "name": "CashTrack - Control de Gastos",
+  "short_name": "CashTrack",
+  "description": "Controla tus gastos, establece presupuestos por categoría y visualiza tus finanzas con gráficos interactivos. Funciona sin conexión.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "id": "/",
+
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["finance", "lifestyle", "utilities"],
+
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#c8f135",
+  "background_color": "#efefef",
+
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+
+  "icons": [
+    {
+      "src": "icons/icon-72x72.svg",
+      "sizes": "72x72",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-96x96.svg",
+      "sizes": "96x96",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-128x128.svg",
+      "sizes": "128x128",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-144x144.svg",
+      "sizes": "144x144",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-152x152.svg",
+      "sizes": "152x152",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-384x384.svg",
+      "sizes": "384x384",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192x192-maskable.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512x512-maskable.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "form_factor": "narrow",
+      "label": "Pantalla de gastos de CashTrack"
+    },
+    {
+      "src": "icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "CashTrack en escritorio"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Registrar Gasto",
+      "short_name": "Gastos",
+      "description": "Ir a la sección de registro de gastos",
+      "url": "/?section=expenses",
+      "icons": [
+        {
+          "src": "icons/icon-96x96.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Presupuesto",
+      "short_name": "Presupuesto",
+      "description": "Configurar presupuestos mensuales",
+      "url": "/?section=budget",
+      "icons": [
+        {
+          "src": "icons/icon-96x96.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Gráficos",
+      "short_name": "Gráficos",
+      "description": "Ver gráficos de gastos y presupuesto",
+      "url": "/?section=charts",
+      "icons": [
+        {
+          "src": "icons/icon-96x96.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Resumen",
+      "short_name": "Resumen",
+      "description": "Ver resumen mensual de finanzas",
+      "url": "/?section=summary",
+      "icons": [
+        {
+          "src": "icons/icon-96x96.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+
+  "share_target": {
+    "action": "/?share-target",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}

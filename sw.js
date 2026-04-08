@@ -77,7 +77,7 @@ self.addEventListener('activate', (event) => {
 function trimDynamicCache(cacheName, maxItems) {
   caches.open(cacheName).then((cache) => {
     cache.keys().then((keys) => {
-      if (keys.length > maxItems) {
+      if (keys.length > maxItems) {P
         cache.delete(keys[0]).then(() => trimDynamicCache(cacheName, maxItems));
       }
     });
